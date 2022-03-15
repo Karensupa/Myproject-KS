@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControlCharacter : MonoBehaviour{
 	public GameObject characterPrincipal;
 	public float velocidad=20f;
+	public GameObject bala;
 	//Use this for initialization
 	void Start() {
 		
@@ -29,6 +30,14 @@ public class ControlCharacter : MonoBehaviour{
 		if(Input.GetKey(KeyCode.LeftArrow)) {
 			//transform.position -= Vector3.right * Time.deltaTime;
 			transform.eulerAngles -= new Vector3(0,velocidad*Time.deltaTime,0);
+		}
+		//Cuando presione La tecla A hago un turbo
+		if(Input.GetKeyDown(KeyCode.A)) {
+			transform.position += transform.forward *velocidad *Time.deltaTime;
+		}
+		//Cuando presione La tecla space hago un disparo
+		if(Input.GetKey(KeyCode.Space)) {
+			Instantiate(bala, transform.position, transform.rotation);
 		}
   }		
 }
