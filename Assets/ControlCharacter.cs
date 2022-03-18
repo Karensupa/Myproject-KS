@@ -8,6 +8,7 @@ public class ControlCharacter : MonoBehaviour{
 	public GameObject bala;
 	//Use this for initialization
 	void Start() {
+		transform.position = new Vector3 (-3.452276F, 0.1900001F, -3.704882F);
 		
 }
 
