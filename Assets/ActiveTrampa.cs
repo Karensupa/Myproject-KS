@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ActiveTrampa : MonoBehaviour {
 	public GameObject activarTrampa;
-	public Rigidbody esfera;
+	public Rigidbody rock;
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Carro") {
-			esfera.GetComponent <Rigidbody> ().useGravity =true; 
+			rock.GetComponent <Rigidbody> ().useGravity =true; 
 		}
 	}
 }
